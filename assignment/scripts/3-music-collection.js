@@ -33,3 +33,17 @@ function showCollection( [] ){
 }
 
 showCollection( collection )
+
+function findByArtist( artistSearch ){
+    let artistArray = [];
+    for( album of collection ){
+        if( artistSearch === album.artist ){
+            artistArray.push( album.artist );
+        } 
+    }
+    return artistArray;
+}
+
+console.log( findByArtist('My Chemical Romance') );
+console.log( findByArtist('$uicide Boy$') );
+console.log( findByArtist('Skrillex') );
