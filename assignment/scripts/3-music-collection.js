@@ -8,7 +8,6 @@ function addToCollection( title, artist, yearPublished ){
         artist : artist,
         yearPublished : yearPublished
     }
-    
     collection.push( album );
 
     return album;
@@ -22,3 +21,15 @@ addToCollection( 'Somewhere Else', 'Zeds Dead', '2014' );
 addToCollection( 'Crybaby', 'Lil Peep', '2016' );
 
 console.log(collection);
+
+function showCollection( [] ){
+    
+    console.log('Number of albums in the collection:', collection.length);
+
+    for( album of collection ){
+        console.log( album.title, 'by', album.artist, 'published in', album.yearPublished);
+    }
+
+}
+
+showCollection( collection )
