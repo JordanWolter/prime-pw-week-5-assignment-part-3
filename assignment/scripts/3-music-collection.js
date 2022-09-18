@@ -20,16 +20,13 @@ addToCollection( 'Recess', 'Skrillex', '2014' );
 addToCollection( 'Somewhere Else', 'Zeds Dead', '2014' );
 addToCollection( 'Crybaby', 'Lil Peep', '2016' );
 
-console.log(collection);
+console.log( collection );
 
 function showCollection( [] ){
-    
-    console.log('Number of albums in the collection:', collection.length);
-
+    console.log( 'Number of albums in the collection:', collection.length );
     for( album of collection ){
-        console.log( album.title, 'by', album.artist, 'published in', album.yearPublished);
+        console.log( album.title, 'by', album.artist, 'published in', album.yearPublished );
     }
-
 }
 
 showCollection( collection )
@@ -41,9 +38,29 @@ function findByArtist( artistSearch ){
             artistArray.push( album.artist );
         } 
     }
-    return artistArray;
+    return console.log( artistArray );
 }
 
-console.log( findByArtist('My Chemical Romance') );
-console.log( findByArtist('$uicide Boy$') );
-console.log( findByArtist('Skrillex') );
+findByArtist( 'My Chemical Romance' );
+findByArtist( '$uicide Boy$' );
+findByArtist( 'Skrillex' );
+
+function search( criteria ){
+    let match = [];
+    for( album of collection ){
+        if( typeof criteria === "undefined" ){
+            return console.log( collection );
+        }else if( criteria.artist === album.artist && criteria.yearPublished === album.yearPublished ){
+            match.push( album );
+        }
+    } 
+    return console.log( match );
+}
+
+
+
+search( {artist: 'Skrillex', yearPublished: '2014'} );
+search( {artist: 'Lil Peep', yearPublished: '2016'} );
+search( {artist: 'Wu tang', yearPublished: '2002'} );
+search(  );
+
